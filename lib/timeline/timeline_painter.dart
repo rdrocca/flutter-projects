@@ -70,7 +70,7 @@ class TimelinePainter extends CustomPainter {
     var pos = Offset(0, size.height);
     var year = startDate.year;
     var month = startDate.month;
-    var day = startDate.day;
+    //var day = startDate.day;
 
     final padding = Offset(5, -10);
     var d = DateTime.utc(startDate.year, startDate.month, 1);

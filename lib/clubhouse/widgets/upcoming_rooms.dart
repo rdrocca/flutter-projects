@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../config/palette.dart';
 import '../data.dart';
+import '../themes/palette.dart';
 
 class UpcomingRooms extends StatelessWidget {
   final List<Room> upcomingRooms;

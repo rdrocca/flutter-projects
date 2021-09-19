@@ -14,6 +14,7 @@ import './fetch_data/main_fetch_data.dart';
 import './travel_bean/main_travel_bean.dart';
 import './pageview_transform/main_pageview_transform.dart';
 import './timeline/main_timeline.dart';
+import './whats4pp/main_whats4pp.dart';
 // import './hero_animations/main_hero_animations.dart';
 // import './menu_navigations/main_menu_navigations.dart';
 // import './persistent_tabbar/main_persistent_tabbar.dart';
@@ -53,6 +54,14 @@ class MyAppState extends State<MyApp> {
         padding: EdgeInsets.all(15.0),
         child: ListView(
           children: <Widget>[
+            MyMenuButton(
+              title: "Whats4pp",
+              actionTap: () {
+                onButtonTap(
+                  MainWhats4pp(),
+                );
+              },
+            ),
             MyMenuButton(
               title: "Fetch Data JSON",
               actionTap: () {

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'config/palette.dart';
-import 'screens/home_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import './themes/palette.dart';
+import './screens/home_screen.dart';
 
 // Flutter Clubhouse Clone UI Tutorial | Apps From Scratch - https://youtu.be/x606y4QWrxo
 class MainClubhouse extends StatelessWidget {
