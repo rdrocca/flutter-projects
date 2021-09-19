@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_projects/simple_music_animation/main_simple_music_animation.dart';
 
 // import './animations/main_animations.dart';
 // import './app_clone/main_apps_clone.dart';
@@ -11,8 +12,9 @@ import 'package:flutter/services.dart';
 // import './communication_widgets/main_communication_widgets.dart';
 import './clubhouse/main_clubhouse.dart';
 import './fetch_data/main_fetch_data.dart';
-import './travel_bean/main_travel_bean.dart';
+import './fractal_tree/main_whats4pp.dart';
 import './pageview_transform/main_pageview_transform.dart';
+import './travel_bean/main_travel_bean.dart';
 import './timeline/main_timeline.dart';
 import './whats4pp/main_whats4pp.dart';
 // import './hero_animations/main_hero_animations.dart';
@@ -101,14 +103,21 @@ class MyAppState extends State<MyApp> {
                 );
               },
             ),
-            // MyMenuButton(
-            //   title: "Hero Animations",
-            //   actionTap: () {
-            //     onButtonTap(
-            //       MainHeroAnimationsPage(),
-            //     );
-            //   },
-            // ),
+            MyMenuButton(
+                title: "Fractal Tree",
+                actionTap: () {
+                  onButtonTap(
+                    MainFractalTree(),
+                  );
+                }),
+            MyMenuButton(
+              title: "Simple Music Animation",
+              actionTap: () {
+                onButtonTap(
+                  MainSimpleMusicAnimation(),
+                );
+              },
+            ),
             // MyMenuButton(
             //   title: "Size and Positions",
             //   actionTap: () {
