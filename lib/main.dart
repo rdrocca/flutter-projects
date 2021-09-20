@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_projects/music_player/main_music_player.dart';
 import 'package:flutter_projects/simple_music_animation/main_simple_music_animation.dart';
 
 // import './animations/main_animations.dart';
@@ -118,14 +119,14 @@ class MyAppState extends State<MyApp> {
                 );
               },
             ),
-            // MyMenuButton(
-            //   title: "Size and Positions",
-            //   actionTap: () {
-            //     onButtonTap(
-            //       MainSizeAndPosition(),
-            //     );
-            //   },
-            // ),
+            MyMenuButton(
+              title: "Music Player",
+              actionTap: () {
+                onButtonTap(
+                  MainMusicPlayer(),
+                );
+              },
+            ),
             // MyMenuButton(
             //   title: "ScrollController and ScrollNotification",
             //   actionTap: () {
