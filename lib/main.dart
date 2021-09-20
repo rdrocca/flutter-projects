@@ -3,35 +3,26 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_projects/music_player/main_music_player.dart';
-import 'package:flutter_projects/simple_music_animation/main_simple_music_animation.dart';
+import 'package:flutter_projects/state_mngmnt/main_state_mngmnt.dart';
 
-// import './animations/main_animations.dart';
-// import './app_clone/main_apps_clone.dart';
-// import './appbar_sliverappbar/main_appbar_sliverappbar.dart';
-// import './collapsing_toolbar/main_collapsing_toolbar.dart';
-// import './communication_widgets/main_communication_widgets.dart';
 import './clubhouse/main_clubhouse.dart';
 import './fetch_data/main_fetch_data.dart';
 import './fractal_tree/main_whats4pp.dart';
+import './music_player/main_music_player.dart';
 import './pageview_transform/main_pageview_transform.dart';
+import './simple_music_animation/main_simple_music_animation.dart';
 import './travel_bean/main_travel_bean.dart';
 import './timeline/main_timeline.dart';
 import './whats4pp/main_whats4pp.dart';
-// import './hero_animations/main_hero_animations.dart';
-// import './menu_navigations/main_menu_navigations.dart';
-// import './persistent_tabbar/main_persistent_tabbar.dart';
-// import './scroll_controller/main_scroll_controller.dart';
-// import './size_and_position/main_size_and_position.dart';
-// import './split_image/main_split_image.dart';
 
-void main() => runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+void main() => runApp(
+      MaterialApp(
+        debugShowCheckedModeBanner: false,
+        //theme: ThemeData( primarySwatch: Colors.blue ),
+        theme: ThemeData.dark(),
+        home: MyApp(),
       ),
-      home: MyApp(),
-    ));
+    );
 
 class MyApp extends StatefulWidget {
   @override
@@ -62,6 +53,14 @@ class MyAppState extends State<MyApp> {
               actionTap: () {
                 onButtonTap(
                   MainWhats4pp(),
+                );
+              },
+            ),
+            MyMenuButton(
+              title: "State Management",
+              actionTap: () {
+                onButtonTap(
+                  MainStateMngmnt(),
                 );
               },
             ),
@@ -185,10 +184,10 @@ class MyAppState extends State<MyApp> {
 }
 
 class MyMenuButton extends StatelessWidget {
+  MyMenuButton({required this.title, required this.actionTap});
+
   final String title;
   final VoidCallback actionTap;
-
-  MyMenuButton({required this.title, required this.actionTap});
 
   @override
   Widget build(BuildContext context) {
