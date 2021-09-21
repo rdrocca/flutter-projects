@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_projects/snake_button.dart';
 import 'package:flutter_projects/state_mngmnt/main_state_mngmnt.dart';
 
 import './clubhouse/main_clubhouse.dart';
@@ -39,18 +40,20 @@ class MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: [SystemUiOverlay.bottom]);
     return Scaffold(
       appBar: AppBar(
         title: Text("Flutter Projects"),
+        centerTitle: true,
       ),
       body: Padding(
         padding: EdgeInsets.all(15.0),
         child: ListView(
           children: <Widget>[
-            MyMenuButton(
+            SnakeButton(
               title: "Whats4pp",
-              actionTap: () {
+              onTap: () {
                 onButtonTap(
                   MainWhats4pp(),
                 );
@@ -58,7 +61,7 @@ class MyAppState extends State<MyApp> {
             ),
             MyMenuButton(
               title: "State Management",
-              actionTap: () {
+              onTap: () {
                 onButtonTap(
                   MainStateMngmnt(),
                 );
@@ -66,7 +69,7 @@ class MyAppState extends State<MyApp> {
             ),
             MyMenuButton(
               title: "Fetch Data JSON",
-              actionTap: () {
+              onTap: () {
                 onButtonTap(
                   MainFetchData(),
                 );
@@ -74,7 +77,7 @@ class MyAppState extends State<MyApp> {
             ),
             MyMenuButton(
               title: "Travel Bean",
-              actionTap: () {
+              onTap: () {
                 onButtonTap(
                   MainTravelBean(),
                 );
@@ -82,22 +85,22 @@ class MyAppState extends State<MyApp> {
             ),
             MyMenuButton(
               title: "Pageview - Transform",
-              actionTap: () {
+              onTap: () {
                 onButtonTap(
                   MainPageviewTransform(),
                 );
               },
             ),
-            MyMenuButton(
+            SnakeButton(
                 title: "Clubhouse",
-                actionTap: () {
+                onTap: () {
                   onButtonTap(
                     MainClubhouse(),
                   );
                 }),
             MyMenuButton(
               title: "Collapsing Toolbar",
-              actionTap: () {
+              onTap: () {
                 onButtonTap(
                   MainTimeline(),
                 );
@@ -105,14 +108,14 @@ class MyAppState extends State<MyApp> {
             ),
             MyMenuButton(
                 title: "Fractal Tree",
-                actionTap: () {
+                onTap: () {
                   onButtonTap(
                     MainFractalTree(),
                   );
                 }),
             MyMenuButton(
               title: "Simple Music Animation",
-              actionTap: () {
+              onTap: () {
                 onButtonTap(
                   MainSimpleMusicAnimation(),
                 );
@@ -120,62 +123,12 @@ class MyAppState extends State<MyApp> {
             ),
             MyMenuButton(
               title: "Music Player",
-              actionTap: () {
+              onTap: () {
                 onButtonTap(
                   MainMusicPlayer(),
                 );
               },
             ),
-            // MyMenuButton(
-            //   title: "ScrollController and ScrollNotification",
-            //   actionTap: () {
-            //     onButtonTap(
-            //       MainScrollController(),
-            //     );
-            //   },
-            // ),
-            // MyMenuButton(
-            //   title: "Apps Clone",
-            //   actionTap: () {
-            //     onButtonTap(
-            //       MainAppsClone(),
-            //     );
-            //   },
-            // ),
-            // MyMenuButton(
-            //   title: "Animations",
-            //   actionTap: () {
-            //     onButtonTap(
-            //       MainAnimations(),
-            //     );
-            //   },
-            // ),
-            // MyMenuButton(
-            //   title: "Communication Widgets",
-            //   actionTap: () {
-            //     onButtonTap(
-            //       MainCommunicationWidgets(),
-            //     );
-            //   },
-            // ),
-            // MyMenuButton(
-            //   title: "Split Image",
-            //   actionTap: () {
-            //     onButtonTap(MainSplitImage());
-            //   },
-            // ),
-            // MyMenuButton(
-            //   title: "Custom AppBar & SliverAppBar",
-            //   actionTap: () {
-            //     onButtonTap(MainAppBarSliverAppBar());
-            //   },
-            // ),
-            // MyMenuButton(
-            //   title: "Menu Navigations",
-            //   actionTap: () {
-            //     onButtonTap(MainMenuNavigations());
-            //   },
-            // ),
           ],
         ),
       ),
@@ -184,10 +137,10 @@ class MyAppState extends State<MyApp> {
 }
 
 class MyMenuButton extends StatelessWidget {
-  MyMenuButton({required this.title, required this.actionTap});
+  MyMenuButton({required this.title, required this.onTap});
 
   final String title;
-  final VoidCallback actionTap;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -198,7 +151,7 @@ class MyMenuButton extends StatelessWidget {
         color: Theme.of(context).primaryColor,
         textColor: Colors.white,
         child: new Text(title),
-        onPressed: actionTap,
+        onPressed: onTap,
       ),
     );
   }
