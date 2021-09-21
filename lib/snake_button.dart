@@ -36,7 +36,7 @@ class _SnakeButtonState extends State<SnakeButton>
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 6),
       child: InkWell(
         onTap: widget.onTap,
         child: CustomPaint(
@@ -75,21 +75,20 @@ class _SnakePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final rect = Offset.zero & size;
-    // final path = Path();
+    final path = Path()..addRect(rect);
 
-    final path1 = Path()..addRect(rect);
     // final path2 = Path()..addRect(rect..deflate(45.0));
     // var path = Path.combine(PathOperation.xor, path1, path2);
 
     //final path = Path.combine(
-    //  PathOperation.intersect,
+    //  PathOperation.xor,
     //  //Path()..,
     //  Path()..addRect(rect),
     //  Path()..addRect(rect..deflate(2.0)),
     //);
 
     canvas.drawPath(
-        path1,
+        path,
         Paint()
           ..shader = SweepGradient(
             colors: [borderColor, snakeColor, borderColor],

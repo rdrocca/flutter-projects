@@ -4,6 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_projects/snake_button.dart';
+import 'package:flutter_projects/snake_game/main_snake_game.dart';
 import 'package:flutter_projects/state_mngmnt/main_state_mngmnt.dart';
 
 import './clubhouse/main_clubhouse.dart';
@@ -56,6 +57,14 @@ class MyAppState extends State<MyApp> {
               onTap: () {
                 onButtonTap(
                   MainWhats4pp(),
+                );
+              },
+            ),
+            SnakeButton(
+              title: "Snake Game",
+              onTap: () {
+                onButtonTap(
+                  MainSnakeGame(),
                 );
               },
             ),
