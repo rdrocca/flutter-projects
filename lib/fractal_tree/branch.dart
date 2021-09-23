@@ -1,11 +1,11 @@
 import 'dart:math';
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Branch {
   Branch(this.parent, this.end);
 
-  final Branch parent;
+  final Branch? parent;
   final Offset end;
 
   Offset get origin => parent?.end ?? Offset.zero;

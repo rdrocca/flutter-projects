@@ -71,7 +71,7 @@ class MainTravelBean extends StatelessWidget {
 }
 
 class MostPopularWidget extends StatelessWidget {
-  List<TravelBean> _list = TravelBean.generateMostPopularBean();
+  final List<TravelBean> _list = TravelBean.generateMostPopularBean();
 
   @override
   Widget build(BuildContext context) {
@@ -141,7 +141,7 @@ class MostPopularWidget extends StatelessWidget {
 }
 
 class TravelWidget extends StatelessWidget {
-  List<TravelBean> _list = TravelBean.generateTravelBean();
+  final List<TravelBean> _list = TravelBean.generateTravelBean();
 
   @override
   Widget build(BuildContext context) {

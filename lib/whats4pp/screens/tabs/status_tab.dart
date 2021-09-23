@@ -15,7 +15,7 @@ class _StatusTabState extends State<StatusTab> {
         children: <Widget>[
           ListTile(
             leading: CircleAvatar(
-              foregroundColor: Theme.of(context).accentColor,
+              foregroundColor: Theme.of(context).colorScheme.secondary,
               backgroundColor: Colors.grey,
               backgroundImage: NetworkImage(
                   "https://avatars.githubusercontent.com/u/52813517?s=400&u=ffdb04d74ae1f757977ea5dc82bdd3a2f7542b26&v=4"),
@@ -32,7 +32,7 @@ class _StatusTabState extends State<StatusTab> {
                   color: Theme.of(context).primaryColor)),
           ListTile(
             leading: CircleAvatar(
-              foregroundColor: Theme.of(context).accentColor,
+              foregroundColor: Theme.of(context).colorScheme.secondary,
               backgroundColor: Colors.grey,
               backgroundImage: NetworkImage(status[1].imgUrl),
             ),
@@ -45,7 +45,7 @@ class _StatusTabState extends State<StatusTab> {
           Divider(),
           ListTile(
             leading: CircleAvatar(
-              foregroundColor: Theme.of(context).accentColor,
+              foregroundColor: Theme.of(context).colorScheme.secondary,
               backgroundColor: Colors.grey,
               backgroundImage: NetworkImage(status[0].imgUrl),
             ),

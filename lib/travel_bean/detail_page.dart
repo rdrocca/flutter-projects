@@ -13,8 +13,8 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
-  final double expanded_height = 400;
-  final double rounded_container_height = 50;
+  final double expandedHeight = 400;
+  final double roundedContainerHeight = 50;
 
   @override
   Widget build(BuildContext context) {
@@ -73,9 +73,9 @@ class _DetailPageState extends State<DetailPage> {
   Widget _buildSliverHead() {
     return SliverPersistentHeader(
       delegate: DetailSliverDelegate(
-        expanded_height,
+        expandedHeight,
         widget.bean,
-        rounded_container_height,
+        roundedContainerHeight,
       ),
     );
   }
@@ -212,7 +212,7 @@ class _DetailPageState extends State<DetailPage> {
 }
 
 class FeaturedWidget extends StatelessWidget {
-  List<TravelBean> _list = TravelBean.generateMostPopularBean();
+  final List<TravelBean> _list = TravelBean.generateMostPopularBean();
 
   @override
   Widget build(BuildContext context) {
@@ -242,10 +242,10 @@ class FeaturedWidget extends StatelessWidget {
 class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
   final double expandedHeight;
   final TravelBean bean;
-  final double rounded_container_height;
+  final double roundedContainerHeight;
 
   DetailSliverDelegate(
-      this.expandedHeight, this.bean, this.rounded_container_height);
+      this.expandedHeight, this.bean, this.roundedContainerHeight);
 
   @override
   Widget build(
@@ -268,11 +268,11 @@ class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
             ),
           ),
           Positioned(
-            top: expandedHeight - rounded_container_height - shrinkOffset,
+            top: expandedHeight - roundedContainerHeight - shrinkOffset,
             left: 0,
             child: Container(
               width: MediaQuery.of(context).size.width,
-              height: rounded_container_height,
+              height: roundedContainerHeight,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(

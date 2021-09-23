@@ -37,7 +37,7 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
 
   Widget _buildTextComposer() {
     return IconTheme(
-        data: IconThemeData(color: Theme.of(context).accentColor),
+        data: IconThemeData(color: Theme.of(context).colorScheme.secondary),
         child: Container(
           child: Row(children: <Widget>[
             Flexible(

@@ -9,7 +9,7 @@ import 'package:flutter_projects/state_mngmnt/main_state_mngmnt.dart';
 
 import './clubhouse/main_clubhouse.dart';
 import './fetch_data/main_fetch_data.dart';
-import './fractal_tree/main_whats4pp.dart';
+import 'fractal_tree/main_fractal_tree.dart';
 import './music_player/main_music_player.dart';
 import './pageview_transform/main_pageview_transform.dart';
 import './simple_music_animation/main_simple_music_animation.dart';
