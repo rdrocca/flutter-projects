@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import 'home_music_player.dart';
+import './home_music_player.dart';
+import './player_model.dart';
 
 class MainMusicPlayer extends StatelessWidget {
   @override
@@ -8,11 +10,9 @@ class MainMusicPlayer extends StatelessWidget {
     return MaterialApp(
       // title: 'Music Player',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Color(0xff075E54),
-        accentColor: Color(0xff25D366),
-      ),
-      home: HomeMusicPlayer(),
+      //theme: ThemeData.light(),
+      home: ChangeNotifierProvider(
+          create: (_) => PlayerModel(), child: HomeMusicPlayer()),
     );
   }
 }
